@@ -1,4 +1,14 @@
-# Cms
+# BLOG CMS
+This project is still in development.
+
+This is a simple blog cms made with Angular with Firebase backend and Angular Material. By now you can login/logout, register, add, edit and remove post. Still developing, still learning.
+
+Technologies used until now: Angular Router, Auth, Guard, Firebase, Material, sass.
+
+Login: admin@admin.pl
+Pass: 123456
+
+When singin up, you can type a fake email address. There is no mail verification.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.0.3.
 

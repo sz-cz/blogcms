@@ -1,0 +1,14 @@
+<form [formGroup]="form">
+    <div class="row">
+      <mat-form-field class="form__input">
+        <input formControlName="title" matInput type="text" placeholder="tytuł wpisu">
+        <mat-error>Wpis musi mieć tytuł</mat-error>
+      </mat-form-field>
+    </div>
+  <div class="row">
+        <mat-form-field class="form__input">
+          <textarea formControlName="content" matInput type="text" placeholder="treść wpisu"></textarea>
+          <mat-error>Wpis musi mieć treść</mat-error>
+        </mat-form-field>
+    </div>
+</form>

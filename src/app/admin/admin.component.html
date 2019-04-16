@@ -1,0 +1,48 @@
+<mat-tab-group class="admin-submenu" backgroundColor="primary" dynamicHeight>
+    <mat-tab label="Lista wpisów">
+        <mat-card class="admin-card">
+            <mat-card-header>
+              <mat-card-title>Lista wpisów</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+              <mat-accordion>
+                <mat-expansion-panel *ngFor="let post of posts$ | async, let index = index" class="admin-card__post-list">
+                  <mat-expansion-panel-header>
+                    <mat-panel-title>
+                    {{post.title}}
+                    </mat-panel-title>
+                    <mat-panel-description>
+                    </mat-panel-description>
+                  </mat-expansion-panel-header>
+                  <p>{{post.content}}</p>
+                  <mat-action-row>
+                    <button mat-button (click)="goToPostEdit(post)">edytuj</button>
+                    <button mat-button (click)="removePost(post.key)">usuń</button>
+                  </mat-action-row>
+                </mat-expansion-panel>
+              </mat-accordion>
+            </mat-card-content>
+          </mat-card>
+    </mat-tab>
+    <mat-tab label="Dodaj nowy wpis">
+        <mat-card class="admin-card">
+            <mat-card-header>
+              <mat-card-title>Dodaj nowy wpis</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                  <app-post-form #postForm></app-post-form>
+                  <button mat-flat-button color="primary" [disabled]="postForm.form.invalid" (click)="createPost()">Utwórz</button>
+            </mat-card-content>
+          </mat-card>
+    </mat-tab>
+    <mat-tab label="Wyloguj">
+      <mat-card class="admin-card">
+          <mat-card-header>
+            <mat-card-title>Wyloguj</mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+            <button mat-flat-button color="primary" (click)="logout()">wyloguj się</button>
+          </mat-card-content>
+        </mat-card>
+  </mat-tab>
+  </mat-tab-group>

@@ -1,0 +1,13 @@
+<mat-card class="admin-card">
+  <mat-card-header>
+    <mat-card-title>Edytuj post "{{post?.title}}"</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+        <app-post-form #postForm></app-post-form>
+  </mat-card-content>
+  <mat-action-row>
+    <button mat-button (click)="saveChanges()">zapisz</button>
+    <button mat-button routerLink="/admin">zrezygnuj</button>
+    <button mat-button (click)="removePost()">usuń</button>
+  </mat-action-row>
+</mat-card>
