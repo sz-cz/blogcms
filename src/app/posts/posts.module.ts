@@ -5,6 +5,7 @@ import { MaterialModule } from '../material/material.module';
 import { PostComponent } from './post/post.component';
 import { FullPostComponent } from './full-post/full-post.component';
 import { CoreModule } from '../core/core.module';
+import { PostsRoutingModule } from './posts-routing.module';
 // import {MatCardModule} from '@angular/material';
 
 @NgModule({
@@ -14,7 +15,8 @@ import { CoreModule } from '../core/core.module';
   imports: [
     CommonModule,
     MaterialModule,
-    CoreModule
+    CoreModule,
+    PostsRoutingModule
   ]
 })
 export class PostsModule { }

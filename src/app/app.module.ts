@@ -6,11 +6,12 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFireDatabaseModule } from '@angular/fire/database'
 import { environment } from 'src/environments/environment';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 
 import { PostsModule } from './posts/posts.module';
 import { MaterialModule } from './material/material.module';
 import { CoreModule } from './core/core.module';
-import { AdminModule } from './admin/admin.module';
+import { PostsRoutingModule } from './posts/posts-routing.module';
 
 @NgModule({
   declarations: [
@@ -18,14 +19,15 @@ import { AdminModule } from './admin/admin.module';
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
     PostsModule,
     AngularFireModule.initializeApp(environment.firebase),
     MaterialModule,
     AngularFireDatabaseModule,
     CoreModule,
-    AdminModule,
-    AngularFireAuthModule
+    AngularFireAuthModule,
+    PostsRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
