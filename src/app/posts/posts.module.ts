@@ -6,6 +6,7 @@ import { PostComponent } from './post/post.component';
 import { FullPostComponent } from './full-post/full-post.component';
 import { CoreModule } from '../core/core.module';
 import { PostsRoutingModule } from './posts-routing.module';
+import { SharedModule } from '../shared/shared.module';
 // import {MatCardModule} from '@angular/material';
 
 @NgModule({
@@ -16,7 +17,8 @@ import { PostsRoutingModule } from './posts-routing.module';
     CommonModule,
     MaterialModule,
     CoreModule,
-    PostsRoutingModule
+    PostsRoutingModule,
+    SharedModule
   ]
 })
 export class PostsModule { }

@@ -6,9 +6,10 @@ import { FooterComponent } from './footer/footer.component';
 import { RouterModule } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { FormsModule } from '@angular/forms';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 @NgModule({
-  declarations: [HeaderComponent, FooterComponent, LoginComponent],
+  declarations: [HeaderComponent, FooterComponent, LoginComponent, PageNotFoundComponent],
   exports: [HeaderComponent, FooterComponent],
   imports: [
     CommonModule,

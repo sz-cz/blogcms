@@ -19,7 +19,7 @@ export class LoginComponent {
   login() {
     this.authService.login(this.credentials)
       .then(user => this.router.navigate(['/admin']))
-      .catch(error => this.snackBar.open(error.message))
+      .catch(error => this.snackBar.open(error.message));
   }
 
   register() {

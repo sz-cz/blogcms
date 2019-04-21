@@ -3,7 +3,10 @@
         <h1 routerLink="/">Blog CMS</h1>
     </div>
     <div class="topbar__admin-buttons">
-            <button [routerLink]="['/admin']" mat-button>admin panel <span *ngIf="user">({{user?.email}})</span></button>
-            <button *ngIf="user" mat-button (click)="logout()">wyloguj</button>
+            <button [routerLink]="['/admin']" mat-button>admin panel
+                <!-- <span *ngIf="user">({{user?.email}})</span> -->
+            </button>
+            <!-- <button *ngIf="user" mat-button (click)="logout()">wyloguj</button> -->
     </div>
 </mat-toolbar>
+<div class="header-picture"></div>
