@@ -1,21 +1,23 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { Observable } from 'rxjs';
-import { Post } from '../models/post';
 import { PostsService } from '../services/posts.service';
+import { AuthService } from '../services/auth.service';
 
 @Component({
-  selector: 'app-header',
+  selector: 'header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.sass']
 })
-export class HeaderComponent implements OnInit {
-  // posts$ : Observable<Post[]> = this.postsService.getPosts();
 
+export class HeaderComponent {
+  constructor(private router : Router, private authService : AuthService) { }
 
-  constructor(private postsService : PostsService, private router : Router) { }
-
-  ngOnInit() {
-    // this.postsService.getPosts().subscribe()
+  checkUserView() {
+    if (this.router.url.substring(0,6) == '/admin' || this.router.url == '/login') return false 
+    else return true
+  }
+  logout() {
+    this.authService.logout()
+    this.router.navigate([''])
   }
 }

@@ -8,7 +8,7 @@ import { PostFormComponent } from './post-form/post-form.component';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
-  selector: 'app-admin',
+  selector: 'app-admin.full-width',
   templateUrl: './admin.component.html',
   styleUrls: ['./admin.component.sass']
 })

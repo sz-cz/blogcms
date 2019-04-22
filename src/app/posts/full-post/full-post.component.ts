@@ -17,13 +17,13 @@ export class FullPostComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.loadPost()
+    this.loadPost();
   }
 
   private loadPost() {
     const key = this.route.snapshot.params['key'];
     this.postService.getPost(key)
-        .subscribe(post => this.post = post);
+        .subscribe(post => this.post = post)
   }
   
 }

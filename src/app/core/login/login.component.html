@@ -1,3 +1,4 @@
+<div class="center">
 <mat-card class="login-card">
   <mat-card-header>
     <mat-card-title>Zaloguj się</mat-card-title>
@@ -10,8 +11,10 @@
       <input name="password" [(ngModel)]="credentials.password" matInput type="text" placeholder="hasło">
     </mat-form-field>
   </mat-card-content>
-  <mat-action-row>
+  <mat-action-row class="login-card__buttons">
     <button mat-flat-button color="primary" (click)="login()" class="login-card__button">zaloguj</button>
     <button mat-flat-button color="warn" (click)="register()" class="login-card__button">zarejestruj</button>
+    <button mat-button routerLink="" class="login-card__button">zrezygnuj</button>
   </mat-action-row>
 </mat-card>
+</div>

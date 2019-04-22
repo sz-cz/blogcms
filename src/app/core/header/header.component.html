@@ -1,12 +1,11 @@
-<mat-toolbar class="header__topbar" color="primary">
-    <div class="topbar__site-name">
+<mat-toolbar *ngIf="router.url !== '/login'" class="header__topbar">
+    <div class="header__site-name">
         <h1 routerLink="/">Blog CMS</h1>
     </div>
-    <div class="topbar__admin-buttons">
-            <button [routerLink]="['/admin']" mat-button>admin panel
-                <!-- <span *ngIf="user">({{user?.email}})</span> -->
-            </button>
-            <!-- <button *ngIf="user" mat-button (click)="logout()">wyloguj</button> -->
+    <div class="header__admin-buttons">
+            <button *ngIf="authService.user" [routerLink]="['/admin']" mat-button>admin panel</button>
+            <button *ngIf="!authService.user" [routerLink]="['/login']" mat-button>zaloguj</button>
+            <button *ngIf="authService.user" mat-button (click)="logout()">wyloguj</button>
     </div>
 </mat-toolbar>
-<div class="header-picture"></div>
+<div class="header__picture" *ngIf="checkUserView()"></div>

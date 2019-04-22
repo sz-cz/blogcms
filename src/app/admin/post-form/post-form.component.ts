@@ -30,7 +30,6 @@ export class PostFormComponent implements OnInit {
   ngOnInit() {
     this.userData = this.authService.user;
     this.buildForm();
-    console.log(this.userData)
   }
 
   setPost(post : Post) {

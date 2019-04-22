@@ -16,7 +16,6 @@ export class PostsComponent implements OnInit {
 
   ngOnInit() {
     this.postsService.getPosts().subscribe()
-    // this.posts$ = this.route.snapshot.data['posts']
   }
 
 }

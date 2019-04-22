@@ -11,9 +11,11 @@ export class PostsService {
 
   private API_URL = '/posts'
 
+  constructor(private db : AngularFireDatabase) {}
+
   getPosts = () : Observable<Post[]> => {
       return this.db.list<Post>(this.API_URL).snapshotChanges()
-        .pipe(map(response => response.map(post => this.addKey(post))))
+        .pipe(map(response => response.map(post => this.addKey(post)).reverse()))
   }
 
   getPost = (key : string) : Observable<Post> => {
@@ -36,5 +38,4 @@ export class PostsService {
   addKey(post) {
     return {...post.payload.val(), key: post.key}
   }
-  constructor(private db : AngularFireDatabase) {}
 }

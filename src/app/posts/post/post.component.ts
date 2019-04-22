@@ -1,6 +1,5 @@
 import { Component, Input } from '@angular/core';
 import { Post } from 'src/app/core/models/post';
-import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 
 @Component({
@@ -11,8 +10,10 @@ import { Router } from '@angular/router';
 export class PostComponent {
 @Input() post : Post
 
-constructor(private dialog : MatDialog, private router : Router) {
+constructor(private router : Router) {}
 
+transformMailToName(mail : string) : string {
+  return mail.substring(0, mail.indexOf('@'))
 }
 
 showFullPost (post) {

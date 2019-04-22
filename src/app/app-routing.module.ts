@@ -5,7 +5,6 @@ import { LoginComponent } from './core/login/login.component';
 import { AuthGuard } from './core/services/auth.guard';
 
 const routes: Routes = [
-  // { path: '', redirectTo: 'posts', pathMatch: 'full'},
   { path: '', pathMatch: 'full', component: PostsComponent},
   { path: 'admin', loadChildren: './admin/admin.module#AdminModule', canActivate: [AuthGuard]},
   { path: 'login', component: LoginComponent},

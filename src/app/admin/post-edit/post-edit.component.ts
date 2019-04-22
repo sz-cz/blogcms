@@ -7,7 +7,7 @@ import { Post } from 'src/app/core/models/post';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
-  selector: 'app-post-edit',
+  selector: 'app-post-edit.full-width',
   templateUrl: './post-edit.component.html',
   styleUrls: ['./post-edit.component.sass']
 })
