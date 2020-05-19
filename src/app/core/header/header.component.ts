@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { PostsService } from '../services/posts.service';
 import { AuthService } from '../services/auth.service';
 
 @Component({
@@ -15,9 +14,7 @@ export class HeaderComponent {
   checkUserView() {
     if (this.router.url.substring(0,6) == '/admin' || this.router.url == '/login') return false 
     else return true
-  }
-  logout() {
-    this.authService.logout()
-    this.router.navigate([''])
-  }
+  };
+  
+  logout = () => this.authService.logout();
 }

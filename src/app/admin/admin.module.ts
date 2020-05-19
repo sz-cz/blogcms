@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AdminComponent } from './admin.component';
-import { MaterialModule } from '../material/material.module';
+import { MaterialModule } from '../shared/modules/material.module';
 import { PostFormComponent } from './post-form/post-form.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PostEditComponent } from './post-edit/post-edit.component';

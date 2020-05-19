@@ -6,4 +6,3 @@ export interface Post {
     title: string;
     key: string;
 }
-

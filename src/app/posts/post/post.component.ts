@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { Post } from 'src/app/core/models/post';
+import { Post } from 'src/app/shared/models/post';
 import { Router } from '@angular/router';
 
 @Component({
@@ -8,16 +8,9 @@ import { Router } from '@angular/router';
   styleUrls: ['./post.component.sass']
 })
 export class PostComponent {
-@Input() post : Post
+@Input() post : Post;
 
 constructor(private router : Router) {}
 
-transformMailToName(mail : string) : string {
-  return mail.substring(0, mail.indexOf('@'))
-}
-
-showFullPost (post) {
-  this.router.navigate(['/posts', post.key])
-}
-
+showFullPost = (post : Post) : Promise<boolean> => this.router.navigate(['/posts', post.key])
 }

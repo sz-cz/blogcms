@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { AuthService } from '../services/auth.service';
-import { Router } from '@angular/router';
-import { MatSnackBar } from '@angular/material/snack-bar';
+import { MatSnackBarRef, SimpleSnackBar } from '@angular/material/snack-bar';
+import { Credentials } from 'src/app/shared/models/credentials';
 
 @Component({
   selector: 'app-login',
@@ -9,23 +9,14 @@ import { MatSnackBar } from '@angular/material/snack-bar';
   styleUrls: ['./login.component.sass']
 })
 export class LoginComponent {
-  credentials = {
+  credentials : Credentials = {
     email: '',
     password: ''
-  }
+  };
 
-  constructor(private authService : AuthService, private router : Router, private snackBar : MatSnackBar) { }
+  constructor(private authService : AuthService) { }
 
-  login() {
-    this.authService.login(this.credentials)
-      .then(user => this.router.navigate(['/admin']))
-      .catch(error => this.snackBar.open(error.message));
-  }
+  login = () : Promise<boolean | MatSnackBarRef<SimpleSnackBar>> => this.authService.login(this.credentials);
 
-  register() {
-    this.authService.register(this.credentials)
-      .then(user => this.snackBar.open('Użytkownik utworzony pomyślnie'))
-      .catch(error => this.snackBar.open(error.message))
-  }
-
+  register = () : Promise<boolean | MatSnackBarRef<SimpleSnackBar>> => this.authService.register(this.credentials);
 }

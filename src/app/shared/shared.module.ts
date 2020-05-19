@@ -1,10 +1,11 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { SpinnerComponent } from './spinner/spinner.component';
+import { SpinnerComponent } from './components/spinner/spinner.component';
+import { SliceEmailPipe } from './pipes/slice-email.pipe';
 
 @NgModule({
-  declarations: [SpinnerComponent],
-  exports: [SpinnerComponent],
+  declarations: [SpinnerComponent, SliceEmailPipe],
+  exports: [SpinnerComponent, SliceEmailPipe],
   imports: [
     CommonModule
   ]

@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { PostsService } from 'src/app/core/services/posts.service';
-import { MatSnackBar } from '@angular/material/snack-bar';
-import { Post } from 'src/app/core/models/post';
+import { Post } from 'src/app/shared/models/post';
 import { UserInfo } from 'firebase';
 import { AuthService } from 'src/app/core/services/auth.service';
 
@@ -16,7 +14,9 @@ export class PostFormComponent implements OnInit {
   form : FormGroup;
   private userData : UserInfo;
 
-  constructor(private formBuilder : FormBuilder, private postsService : PostsService, private authService : AuthService, private snackbar : MatSnackBar) { }
+  constructor(
+    private formBuilder : FormBuilder, 
+    private authService : AuthService) { }
 
   private buildForm() {
     this.form = this.formBuilder.group({
