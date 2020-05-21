@@ -1,9 +1,8 @@
 # BLOG CMS
-This project is still in development.
+This is a simple Angular blog cms with ngrx store & effects, Firebase backend and Angular Material Components.
+By now you can login/logout, register, add, edit and remove posts. Still developing, still learning.
 
-This is a simple blog cms made with Angular with Firebase backend and Angular Material. By now you can login/logout, register, add, edit and remove post. Still developing, still learning.
-
-Technologies used until now: Angular Router, Auth, Guard, Firebase, Material, sass.
+Technologies used until now: rxjs, ngrx, Angular Router, Auth, Guard, Firebase, Material, sass.
 
 Login: admin@admin.pl
 Pass: 123456
