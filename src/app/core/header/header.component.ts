@@ -9,7 +9,7 @@ import { AuthService } from '../services/auth.service';
 })
 
 export class HeaderComponent {
-  constructor(private router : Router, private authService : AuthService) { }
+  constructor(public router : Router, private authService : AuthService) { }
 
   checkUserView() {
     if (this.router.url.substring(0,6) == '/admin' || this.router.url == '/login') return false 

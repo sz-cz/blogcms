@@ -21,7 +21,7 @@ export class PostsEffects {
             catchError(error => of(new LoadPostsFailAction(error)))
           )
       ),
-  )
+  );
 
   @Effect() addPost$ = this.actions$
   .pipe(
@@ -33,7 +33,7 @@ export class PostsEffects {
             return new AddPostSuccessAction()
           }).catch(error => of(new AddPostFailAction(error)))
         )
-    )
+    );
 
   @Effect() deletePost$ = this.actions$
   .pipe(
@@ -45,7 +45,7 @@ export class PostsEffects {
             return new DeletePostSuccessAction(data.payload)
           }).catch(error => of(new DeletePostFailAction(error)))
         )
-    )
+    );
 
   @Effect() updatePost$ = this.actions$
   .pipe(
@@ -57,7 +57,7 @@ export class PostsEffects {
             return new UpdatePostSuccessAction(data.key, data.payload)
           }).catch(error => of(new UpdatePostFailAction(error)))
         )
-    )
+    );
 
   constructor(
     private actions$: Actions,

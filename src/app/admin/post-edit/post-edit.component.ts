@@ -28,7 +28,7 @@ export class PostEditComponent implements AfterViewInit {
 
   saveChanges = () : void => this.store.dispatch(new UpdatePostAction(this.post.key+'', this.postForm.form.value));
 
-  removePost = (key : string) : void => this.store.dispatch(new DeletePostAction(key));
+  removePost = () : void => this.store.dispatch(new DeletePostAction(this.post.key+''));
 
   ngAfterViewInit() {
     this.loadPost()

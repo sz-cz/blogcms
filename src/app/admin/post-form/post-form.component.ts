@@ -9,6 +9,7 @@ import { AuthService } from 'src/app/core/services/auth.service';
   templateUrl: './post-form.component.html',
   styleUrls: ['./post-form.component.sass']
 })
+
 export class PostFormComponent implements OnInit {
 
   form : FormGroup;
