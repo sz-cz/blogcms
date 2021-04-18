@@ -14,7 +14,7 @@ import { AddPostAction, DeletePostAction } from '../store/actions/post.actions';
   styleUrls: ['./admin.component.sass']
 })
 export class AdminComponent implements OnInit {
-  @ViewChild('postForm') postForm: PostFormComponent;
+  @ViewChild('postForm', { static: true }) postForm: PostFormComponent;
   posts$ : Observable<Post[]>
 
   constructor(

@@ -16,7 +16,7 @@ import { DeletePostAction, UpdatePostAction } from 'src/app/store/actions/post.a
 })
 
 export class PostEditComponent implements AfterViewInit {
-  @ViewChild('postForm') postForm : PostFormComponent;
+  @ViewChild('postForm', { static: true }) postForm : PostFormComponent;
   post : Post;
 
   constructor(
