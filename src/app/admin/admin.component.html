@@ -14,7 +14,7 @@
                     <mat-panel-description>
                     </mat-panel-description>
                   </mat-expansion-panel-header>
-                  <p>{{post.content}}</p>
+                  <div [innerHTML]='post.content.length > 380 ? (post.content | slice:0:380) + "..." : post.content'></div>
                   <mat-action-row>
                     <button mat-button (click)="goToPostEdit(post)">edytuj</button>
                     <button mat-button (click)="removePost(post.key)">usuń</button>

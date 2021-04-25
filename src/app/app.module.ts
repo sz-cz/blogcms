@@ -16,6 +16,7 @@ import { PostsReducer } from './store/reducers/posts.reducer'
 import { EffectsModule } from '@ngrx/effects';
 import { PostsEffects } from './store/effects/posts.effects';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { QuillModule } from 'ngx-quill';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
     CoreModule,
     AngularFireAuthModule,
     PostsRoutingModule,
+    // QuillModule,
     StoreModule.forRoot({
       posts: PostsReducer
     }),

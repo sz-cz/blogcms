@@ -15,6 +15,15 @@ export class PostFormComponent implements OnInit {
   form : FormGroup;
   private userData : UserInfo;
 
+  config = {
+    toolbar: [
+      ['bold', 'italic', 'underline'],
+      // [{ 'list': 'ordered'}, { 'list': 'bullet' }],
+      [{ 'size': ['small', false, 'large', 'huge'] }],
+      [{ 'header': [1, 2, 3, 4, 5, 6, false] }],
+    ]
+  }
+
   constructor(
     private formBuilder : FormBuilder, 
     private authService : AuthService) { }

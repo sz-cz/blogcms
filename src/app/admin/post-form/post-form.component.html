@@ -6,9 +6,9 @@
       </mat-form-field>
     </div>
   <div class="row">
-        <mat-form-field class="form__input">
-          <textarea formControlName="content" matInput type="text" placeholder="treść wpisu"></textarea>
-          <mat-error>Wpis musi mieć treść</mat-error>
-        </mat-form-field>
+        <div class="form__input">
+          <quill-editor matInput [modules]="config" formControlName="content"></quill-editor>
+          <mat-error *ngIf="form.get('content').hasError('required') && form.get('content').dirty">Wpis musi mieć treść</mat-error>
+        </div>
     </div>
 </form>

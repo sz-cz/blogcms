@@ -8,6 +8,7 @@ import { PostEditComponent } from './post-edit/post-edit.component';
 import { CoreModule } from '../core/core.module';
 import { RouterModule } from '@angular/router';
 import { AdminRoutingModule } from './admin-routing.module'
+import { QuillModule } from 'ngx-quill';
 
 @NgModule({
   declarations: [AdminComponent, PostFormComponent, PostEditComponent],
@@ -19,7 +20,8 @@ import { AdminRoutingModule } from './admin-routing.module'
     ReactiveFormsModule,
     CoreModule,
     RouterModule,
-    AdminRoutingModule
+    AdminRoutingModule,
+    QuillModule.forRoot()
   ]
 })
 export class AdminModule { }
